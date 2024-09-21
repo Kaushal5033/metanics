@@ -4,6 +4,7 @@ import LandAbout from './components/Land-About';
 import LandServices from './components/land-Services';
 import LandCounting from './components/Land-Counting';
 import LandChoose from './components/Land-choose';
+import LandBrand from './components/Land-Brand';
 // import headbgImage from './assets/headbg.png';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <LandServices />
         <LandCounting />
         <LandChoose />
+        <LandBrand />
       </div>
     </div>
   );

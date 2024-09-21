@@ -45,7 +45,7 @@ const Hero = () => {
 
   return (
     <>
-    <main ref={mainRef} className="container mx-auto px-4 pt-32 text-white">
+    <main ref={mainRef} className="container mx-auto bg-black px-4 pt-32 text-white">
       <h1 
         ref={h1Ref}
         className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-center md:text-left"
@@ -109,9 +109,10 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="overflow-hidden py-4">
+      <div className="overflow-hidden bg-black w-full py-4">
         <div 
           ref={textRef} 
+
 
           className="flex whitespace-nowrap space-x-8">
           <span className="text-4xl text-white font-bold">Text Loop 1</span>
