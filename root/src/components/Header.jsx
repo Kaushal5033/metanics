@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import logo from '../assets/logo1.png';
 
 const Header = () => {
   const navItems = ['Home', 'About Us', 'Services', 'Portfolio', 'Pages', 'Contact'];
@@ -24,19 +25,21 @@ const Header = () => {
 
   return (
     <header ref={headerRef} className="fixed top-0 left-0 right-0 bg-aspire-dark z-10">
-      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <nav className="container mx-auto px-4 py-4 flex justify-between items-center" style={{ backdropFilter: 'blur(10px)' }}>
         <div 
           ref={logoRef}
           className="text-2xl font-bold text-white"
         >
-          Metanics
+          <div className='w-20'>
+          <img src={logo} alt="Metanics Logo" />
+          </div>
         </div>
         <ul className="hidden md:flex space-x-6">
           {navItems.map((item, index) => (
             <li 
               key={item} 
               ref={el => navItemsRef.current[index] = el}
-              className="cursor-pointer text-white hover:text-aspire-green transition-colors"
+              className="cursor-pointer text-white hover:text-blue-500 transition-colors"
             >
               {item}
             </li>

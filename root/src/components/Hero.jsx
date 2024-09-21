@@ -1,8 +1,23 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { FaFacebook, FaTwitter, FaInstagram, FaPinterest, FaYoutube } from 'react-icons/fa';
 
 const Hero = () => {
+  
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const text = textRef.current;
+    
+    gsap.to(text, {
+      xPercent: 100,
+      ease: "linear",
+      duration: 15,
+      repeat: -1
+     
+    });
+
+  }, []);
   const services = [
     'On-Page SEO', 'Content Marketing', 'Off-Page SEO', 
     'Social Media Marketing', 'Analytics and Reporting', 'Influencer Marketing'
@@ -56,23 +71,23 @@ const Hero = () => {
       </div>
       <div 
         ref={servicesRef}
-        className="bg-aspire-green rounded-3xl p-4 sm:p-6 md:p-8 mb-12"
+        className=" rounded-3xl p-4 sm:p-6 md:p-8 mb-12"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {services.map((service, index) => (
             <div 
               key={service}
-              className="bg-green-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-full text-center text-sm sm:text-base hover:bg-green-700 transition-colors"
+              className="bg-blue-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-full text-center text-sm sm:text-base hover:bg-green-700 transition-colors"
             >
               {service}
             </div>
           ))}
         </div>
         <div className="flex flex-col sm:flex-row justify-between items-center mt-6 sm:mt-8">
-          <button className="bg-white text-aspire-green px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base hover:bg-gray-100 transition-colors mb-4 sm:mb-0">
+          <button className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base hover:bg-gray-100 transition-colors mb-4 sm:mb-0">
             View Portfolio
           </button>
-          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-600 rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 rounded-full flex items-center justify-center">
             <FaYoutube className="text-white text-xl sm:text-2xl" />
           </div>
         </div>
@@ -94,18 +109,23 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div
-        ref={logosRef}
-        className="mt-8 sm:mt-12 overflow-hidden whitespace-nowrap"
-      >
-        <div className="animate-marquee inline-block">
-          {['Google', 'Amazon', 'Microsoft', 'Apple', 'Facebook', 'Netflix', 'Tesla', 'Uber', 'Airbnb', 'Twitter'].map((logo, index) => (
-            <span key={index} className="inline-block mx-4 sm:mx-8 text-2xl sm:text-4xl font-bold text-white">
-              {logo}
-            </span>
-          ))}
+      <div className="overflow-hidden py-4">
+        <div 
+          ref={textRef} 
+
+          className="flex whitespace-nowrap space-x-8">
+          <span className="text-4xl text-white font-bold">Text Loop 1</span>
+          <span className="text-4xl text-white font-bold">Text Loop 2</span>
+          <span className="text-4xl text-white font-bold">Text Loop 3</span>
+          <span className="text-4xl text-white font-bold">Text Loop 4</span>
+          <span className="text-4xl text-white font-bold">Text Loop 5</span>
+          <span className="text-4xl text-white font-bold">Text Loop 1</span>
+          <span className="text-4xl text-white font-bold">Text Loop 2</span>
+          <span className="text-4xl text-white font-bold">Text Loop 3</span>
+          <span className="text-4xl text-white font-bold">Text Loop 4</span>
+          <span className="text-4xl text-white font-bold">Text Loop 5</span>
         </div>
-      </div>
+    </div>
     </main>
     </>
   );

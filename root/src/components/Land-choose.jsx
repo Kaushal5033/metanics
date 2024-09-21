@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -114,14 +114,14 @@ const WhyChooseUs = () => {
 
   return (
     <>
-    <section className="bg-black text-white py-16">
+    <section className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
         {/* Left Side: Image and Overlapping Rating Card */}
         <div className="relative w-full lg:w-1/2 p-6" ref={imageContainer}>
           <img
             src="https://img.freepik.com/free-photo/young-handsome-business-man-with-laptop-office_1303-21060.jpg?t=st=1726916732~exp=1726920332~hmac=27a80a4ad2924e560af40b122fae15e0efc402381aad8ad6e8d17e9b3ec7ec8d&w=1480" // Placeholder for your image
             alt="Business Meeting"
-            className="rounded-lg w-full"
+            className="rounded-lg w-full object-cover"
           />
           {/* Overlapping Rating Card */}
           <div className="absolute bottom-[-30px] left-[-20px] bg-black p-6 rounded-lg shadow-xl border border-gray-700 transform hover:scale-105 transition-transform duration-300" ref={ratingCard}>
@@ -151,7 +151,7 @@ const WhyChooseUs = () => {
           </p>
           <ul className="space-y-6" ref={titleRef}>
             {features.map((feature, index) => (
-              <li key={index} className="flex items-start space-x-4" ref={titleRef} ref={featureItem}>
+              <li key={index} className="flex items-start space-x-4" ref={featureItem}>
                 <div className="text-3xl text-green-400">{feature.icon}</div>
                 <div>
                   <h3 className="text-xl font-semibold">{feature.title} </h3>
@@ -164,7 +164,7 @@ const WhyChooseUs = () => {
       </div>
     </section>
 
-    <section className="relative bg-black py-12">
+    <section className="relative bg-black py-12 px-4 sm:px-6 lg:px-8">
       {/* Background image */}
       <div className="bg-green-500 bg-opacity-80 rounded-xl shadow-xl w-full max-w-7xl mx-auto overflow-hidden">
         {/* Replace with your actual image */}
